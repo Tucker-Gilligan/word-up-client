@@ -1,12 +1,13 @@
 import './App.css';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
+import React from 'react';
 
 const styles = {
   App: {
     height: '100vh',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as 'column',
     justifyContent: 'center',
   },
   Header: {
@@ -14,7 +15,7 @@ const styles = {
   },
   TableContainer: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as 'column',
     marginTop: '0px',
     paddingTop: '0px',
     paddingBottom: '20px',
@@ -24,7 +25,7 @@ const styles = {
     width: '50px',
     height: '50px',
     fontSize: '50px',
-    textAlign: 'center',
+    textAlign: 'center' as 'center',
   },
   Keyboard: {
     paddingTop: '16px',
