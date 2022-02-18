@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <div className='App' style={styles.App}>
-      <div className='App-header' style={styles.Header}>
+      <div className='App-header' style={styles.Header} id="header">
         Word Up
       </div>
       <div className='table-container' style={styles.TableContainer}>
