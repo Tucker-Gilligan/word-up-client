@@ -24,3 +24,10 @@ export const styles = {
     justifyContent: 'center',
   },
 };
+
+export interface WordUpData {
+  guess: string;
+  rowId: string;
+  tryNum: number;
+  feedback: string;
+}

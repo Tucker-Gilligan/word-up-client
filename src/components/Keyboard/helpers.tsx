@@ -1,7 +1,6 @@
 import React from 'react';
-import { styles } from '../components/Keyboard/types';
+import { styles } from './types';
 
-const useKeyboard = () => {
   const createRow = (keyString: string, onClick: (evt: any) => void) => {
     const keyArr = keyString.split(' ');
     const keyboardRow = keyArr.map(keyValue => {
@@ -20,8 +19,11 @@ const useKeyboard = () => {
     });
     return keyboardRow;
   };
-  
-  const createKeyboard = (keyboardRows: string[], onClick: (evt: any) => void) => {
+
+  export const createKeyboard = (
+    keyboardRows: string[],
+    onClick: (evt: any) => void
+  ) => {
     return (
       <div style={styles.KeyboardContainer}>
         {keyboardRows.map((row, i) => {
@@ -34,10 +36,3 @@ const useKeyboard = () => {
       </div>
     );
   };
-
-  return {
-    createKeyboard
-  }
-}
-
-export default useKeyboard;
