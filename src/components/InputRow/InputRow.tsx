@@ -1,29 +1,17 @@
 import React from 'react';
+import { styles, InputRowProps } from './types'
 
-const styles = {
-  LetterInput: {
-    width: '50px',
-    height: '50px',
-    fontSize: '50px',
-    textAlign: 'center' as 'center',
-  },
-}
 
-interface InputRowProps {
-  id: string;
-  disabled?: boolean;
-}
-
-export const InputRow = ({ disabled, id }: InputRowProps) => {
+export const InputRow = ({ guess, id, rowId }: InputRowProps) => {
   return (
-    <tr id={`${id}-row`}>
-      <td id={`${id}-data-cell`}>
-        <input type='text' maxLength={1} style={styles?.LetterInput} disabled={disabled} id={`${id}-input-1`} />
-        <input type='text' maxLength={1} style={styles?.LetterInput} disabled={disabled} id={`${id}-input-2`}/>
-        <input type='text' maxLength={1} style={styles?.LetterInput} disabled={disabled} id={`${id}-input-3`}/>
-        <input type='text' maxLength={1} style={styles?.LetterInput} disabled={disabled} id={`${id}-input-4`}/>
-        <input type='text' maxLength={1} style={styles?.LetterInput} disabled={disabled} id={`${id}-input-5`}/>
+    <tr id={`${id}-row`} style={styles.TableRow}>
+      <td id={`${id}-data-cell`} style={styles.InputContainer}>
+        <div style={styles?.LetterInput} id={`${id}-input-1`}>{id === rowId && guess[0]}</div>
+        <div style={styles?.LetterInput} id={`${id}-input-2`}>{id === rowId && guess[1]}</div>
+        <div style={styles?.LetterInput} id={`${id}-input-3`}>{id === rowId && guess[2]}</div>
+        <div style={styles?.LetterInput} id={`${id}-input-4`}>{id === rowId && guess[3]}</div>
+        <div style={styles?.LetterInput} id={`${id}-input-5`}>{id === rowId && guess[4]}</div>
       </td>
     </tr>
-  )
+  );
 };
